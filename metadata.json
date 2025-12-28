@@ -1,0 +1,7 @@
+{
+  "name": "timberCounter AI",
+  "description": "A modern web application for automated timber log counting and detection, providing real-time visual feedback and precise metrics.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
