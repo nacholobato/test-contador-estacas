@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { PredictionState, DetectionResponse, BoundingBox } from './types';
 import DetectionCanvas from './components/DetectionCanvas';
 
-const API_ENDPOINT = 'http://localhost:8000/predict';
+const API_ENDPOINT = 'http://127.0.0.1:8000/predict';
 
 // A high-quality placeholder image of timber for the "Try Sample" feature
 const SAMPLE_IMAGE_URL = "https://images.unsplash.com/photo-1586339949916-3e9457bef613?auto=format&fit=crop&q=80&w=1200";
@@ -105,7 +105,7 @@ const App: React.FC = () => {
       setState(prev => ({ 
         ...prev, 
         loading: false, 
-        error: `Could not connect to ${API_ENDPOINT}. Is your local Python/Node server running? If not, use Demo Mode.`
+        error: `Could not connect to ${API_ENDPOINT}. Is your local Python/Node server running? If not, use Simulation mode.`
       }));
     }
   };
@@ -117,7 +117,6 @@ const App: React.FC = () => {
   const toggleAndRetry = () => {
     setIsDemoMode(true);
     setState(prev => ({ ...prev, error: null }));
-    // handleSubmit will be triggered by state effect or manual click
   };
 
   // Trigger handle submit if demo mode was just toggled after an error
